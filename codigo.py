@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 # leitura do arquivo csv
 dados = pd.read_csv('dados_pantanal.csv')
 
-print(dados.columns)
-
 # converter colunas para numérico
 dados['temperatura_c'] = pd.to_numeric(dados['temperatura_c'], errors='coerce')
 dados['nivel_rio_m'] = pd.to_numeric(dados['nivel_rio_m'], errors='coerce')
