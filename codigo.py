@@ -6,18 +6,18 @@ dados = pd.read_csv('dados_pantanal.csv')
 
 # converter colunas para numérico
 dados['temperatura_c'] = pd.to_numeric(dados['temperatura_c'], errors='coerce')
-dados['nivel_rio_m'] = pd.to_numeric(dados['nivel_rio_m'], errors='coerce')
-dados['ndvi'] = pd.to_numeric(dados['ndvi'], errors='coerce')
+dados[' nivel_rio_m'] = pd.to_numeric(dados[' nivel_rio_m'], errors='coerce')
+dados[' ndvi'] = pd.to_numeric(dados[' ndvi'], errors='coerce')
 
 # preencher valores vazios com a média
-dados['nivel_rio_m'] = dados['nivel_rio_m'].fillna(dados['nivel_rio_m'].mean())
-dados['ndvi'] = dados['ndvi'].fillna(dados['ndvi'].mean())
+dados[' nivel_rio_m'] = dados[' nivel_rio_m'].fillna(dados[' nivel_rio_m'].mean())
+dados[' ndvi'] = dados[' ndvi'].fillna(dados[' ndvi'].mean())
 
-# converter datas
+# tratar data 
 dados['data'] = pd.to_datetime(dados['data'])
 
-# médias
-medias = dados[['temperatura_c', 'nivel_rio_m', 'ndvi']].mean()
+# calculo dos médias 
+medias = dados[['temperatura_c', ' nivel_rio_m', ' ndvi']].mean()
 
 print('\nMédias calculadas:')
 print(medias)
@@ -40,26 +40,18 @@ plt.ylabel('Graus Celsius')
 plt.grid(True)
 plt.legend()
 
-# nível do rio e ndvi
+# nível do rio
 plt.subplot(2,1,2)
 
 plt.plot(
     dados['data'],
-    dados['nivel_rio_m'],
+    dados[' nivel_rio_m'],
     marker='s',
     color='blue',
     label='Nível do Rio'
 )
 
-plt.plot(
-    dados['data'],
-    dados['ndvi'],
-    marker='^',
-    color='green',
-    label='NDVI'
-)
-
-plt.title('Nível do rio e índice de vegetação')
+plt.title('Nível do rio ao longo do tempo')
 plt.xlabel('Data')
 plt.ylabel('Escala')
 plt.grid(True)

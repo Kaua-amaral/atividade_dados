@@ -5,9 +5,12 @@ e matplotlib para geração dos graficos : https://matplotlib.org/
 
 primeiramente eu converti os campos de string para número, e tratei erros.
 apos isso preenchi os campos vazios com as médias das respectivas colunas. 
-então calculei as medias gerais, e então gerei os graficos. 
+então calculei as medias gerais, e então gerei os graficos.
+optei por gerar os graficos de evolução da temperatura e nivel do rio. 
 
-INSTRUÇÃO DE EXECUÇÃO : 
+INSTRUÇÕES DE EXECUÇÃO : 
 certifique-se de possuir python instalado e depois use 'pip install' com 'pandas' e 'matplotlib'.
 certifique-se de possuir git instalado e então cole no terminal: git clone https://github.com/Kaua-amaral/atividade_dados
-então clicar em executar.
+então cole para acessar a pasta  : cd atividade_dados
+para visualizar a pasta : code .
+então selecione o arquivo e execute 
